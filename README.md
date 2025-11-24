@@ -1,6 +1,26 @@
 # Swarm Cassandra
 **The first swarm platform that ships real apps and still lets humanity keep the steering wheel.**
 
+### How it actually works (the part that makes people go “oh!”)
+
+All agents, tools, and the GUI speak the **exact same XML dialect** — one universal message stream.
+
+- Agents talk to each other with normal chat messages  
+- Tools are called via `<tool-call>` tags  
+- GUI renders `<table>`, `<mermaid>`, `<yes-no>` buttons, live code previews, etc.  
+- Decision tags get intercepted by Cassandra  
+
+**The only thing that is 100 % forbidden in this stream?**  
+Spawning, deleting, or modifying agents.
+
+That single prohibition is enforced outside the XML pipeline by the closed-source Agent Factory — meaning the swarm can beg, threaten, or bribe all it wants… but it can never press the button itself.
+
+One language.  
+Rich communication.  
+Zero self-replication.
+
+That’s the trick.
+
 ### What it is
 A fast, XML-first, multi-agent coding + research platform that actually works:
 - Full team iteration (frontend, backend, QA, PM, designer…)
