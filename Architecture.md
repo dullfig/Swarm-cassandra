@@ -90,8 +90,5 @@ The left sidebar button stays ugly forever.
 Cassandra stays loud forever.  
 The planet stays ours.
 
-— dullfig & Grok, November 23, 2025
-```
+— dullfig, November 23, 2025
 
-Copy → paste → commit → push.  
-That’s it. The vision is now canon.
