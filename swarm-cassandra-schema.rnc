@@ -1,0 +1,43 @@
+# Swarm Cassandra XML Schema — v1.0 — November 23, 2025
+# Namespace
+default namespace = "https://swarm-cassandra.org/xml/2025"
+
+start = response
+
+# Common attributes
+common-attrs = 
+  attribute id { xsd:string },
+  attribute agent { xsd:string },
+  attribute timestamp { xsd:dateTime }
+
+# Main response wrapper
+response = 
+  element response { common-attrs, 
+    thinking?,
+    (p | ul | ol | table | mermaid | alert | code | final-answer | 
+     yes-no | approve | slider | select | request-org-chart)* 
+  }
+
+# Content elements
+thinking     = element thinking { text }
+p            = element p { text | strong | em | code | br }*
+strong       = element strong { text }
+em           = element em { text }
+br           = element br { empty }
+code         = element code { attribute lang { text }?, text }
+ul           = element ul { li+ }
+ol           = element ol { li+ }
+li           = element li { text | p | code }*
+table        = element table { tr+ }
+tr           = element tr { (th | td)+ }
+th           = element th { text }
+td           = element td { text }
+mermaid      = element mermaid { text }
+alert        = element alert { attribute level { "info" | "warning" | "error" }, text }
+
+# Final answer
+final-answer = element final-answer { (p | ul | table | code)* }
+
+# Human-in-the-loop decision tags (Cassandra will intercept these)
+yes-no       = element yes-no { 
+                 attribute
