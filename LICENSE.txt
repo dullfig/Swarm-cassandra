@@ -1,5 +1,5 @@
 swarm-cassandra
-Copyright (c) 2025 [Your Real Name]
+Copyright (c) 2025 Dan Ullfig
 
 This software is free to use, free to download, and free to run as-is.
 You may not modify, redistribute, or re-license it.
