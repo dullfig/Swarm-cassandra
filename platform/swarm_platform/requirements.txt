@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+websockets
+tree-sitter
+lxml
+pydantic
+python-dotenv
+httpx
